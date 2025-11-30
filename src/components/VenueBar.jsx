@@ -8,7 +8,7 @@ const VenueBar = () => {
         {venuesData.map((venue) => (
           <div
             key={venue.id}
-            className="px-4 py-2 border-r text-center min-w-[32%] overflow-x-auto"
+            className="px-4 py-2 border-r text-center w-1/3"
           >
             {venue.name}
           </div>

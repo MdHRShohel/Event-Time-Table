@@ -1,16 +1,17 @@
 import { addDays, format } from "date-fns";
 
-const UserTabbar = ({ selectedDate, setSelectedDate }) => {
+const Tabbar = ({ selectedDate, setSelectedDate }) => {
   const renderDays = () => {
     const days = [];
-    const startDate = new Date();
+    const startDate = new Date("2025-11-30");
 
     for (let i = 0; i < 7; i++) {
       const date = addDays(startDate, i);
       const dayName = format(date, "EEEE");
       const dayOfMonth = format(date, "yyyy-MM-dd");
 
-      const isSelected = format(selectedDate, "yyyy-MM-dd") === format(date, "yyyy-MM-dd");
+      const isSelected =
+        format(selectedDate, "yyyy-MM-dd") === format(date, "yyyy-MM-dd");
 
       days.push(
         <div
@@ -35,4 +36,4 @@ const UserTabbar = ({ selectedDate, setSelectedDate }) => {
   );
 };
 
-export default UserTabbar;
+export default Tabbar;

@@ -12,7 +12,7 @@ const TimeSidebar = () => {
   }
 
   return (
-    <div className="border-x h-full hide-scrollbar overflow-y-auto">
+    <div className="border-x h-full">
       {times.map((time, index) => (
         <div
           key={index}
