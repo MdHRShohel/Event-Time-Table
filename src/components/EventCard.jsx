@@ -8,8 +8,8 @@ const EventCard = ({ event }) => {
       style={{
         top: `${top}rem`,
         height: `${height}rem`,
-        left: `${left}%`,
-        width: `${width}%`,
+        left: left,
+        width: width,
       }}
     >
       <div className="bg-blue-200 h-full flex flex-col items-center justify-center p-2 overflow-hidden">

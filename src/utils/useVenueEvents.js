@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { format } from "date-fns";
+import { VENUE_WIDTH_PERCENT } from "../constants/venueConfig";
 
 const REM_PER_MINUTE = 4 / 15;
 const HEIGHT_MULTIPLIER = 1.5;
@@ -27,7 +28,7 @@ export const useVenueEvents = (events, venues, selectedDate) => {
 
   const processedEvents = useMemo(() => {
     const eventsMap = new Map();
-    const venueCount = venues.length;
+    const venueWidth = VENUE_WIDTH_PERCENT;
 
     filteredEvents.forEach((event) => {
       if (eventsMap.has(event.id)) return;
@@ -40,15 +41,15 @@ export const useVenueEvents = (events, venues, selectedDate) => {
 
       if (startVenue) {
         const startVenueIndex = venues.indexOf(startVenue);
-        const left = (startVenueIndex / venueCount) * 100;
-        const width = (venueSpan / venueCount) * 100;
+        const left = (startVenueIndex * venueWidth);
+        const width = (venueSpan * venueWidth);
 
         eventsMap.set(event.id, {
           ...event,
           top,
           height,
-          left,
-          width,
+          left: `${left}%`,
+          width: `${width}%`,
         });
       }
     });

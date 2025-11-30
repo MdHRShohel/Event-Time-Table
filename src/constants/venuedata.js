@@ -11,4 +11,8 @@ export const venuesData = [
     id: 3,
     name: "Venue3",
   },
+  {
+    id: 4,
+    name: "Venue4",
+  }
 ];
