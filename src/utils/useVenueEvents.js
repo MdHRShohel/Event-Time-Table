@@ -33,8 +33,7 @@ export const useVenueEvents = (events, venues, selectedDate) => {
       if (eventsMap.has(event.id)) return;
 
       const top = timeToMinutes(event.startTime) * REM_PER_MINUTE;
-      const duration =
-        timeToMinutes(event.endTime) - timeToMinutes(event.startTime);
+      const duration = timeToMinutes(event.endTime) - timeToMinutes(event.startTime);
       const height = duration * REM_PER_MINUTE * HEIGHT_MULTIPLIER;
       const venueSpan = getVenueSpan(event.venues);
       const startVenue = venues.find((v) => v.id === event.venues[0]);
